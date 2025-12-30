@@ -20,7 +20,7 @@ pub fn build_target(target_name: &str, targets: &HashMap<String, Target>) {
             let status = if cfg!(windows) {
                 // Use `cmd.exe` on Windows
                 let output = Command::new("cmd")
-                    .args(&["/C", command])  // `/C` tells `cmd` to execute the command and then terminate
+                    .args(&["/C", command])
                     .output()
                     .expect("Failed to execute command");
 
