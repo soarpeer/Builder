@@ -20,7 +20,7 @@ fn main() {
         exit(1);
     }
 
-    let targets = parse_buildfile("buildfile.txt").expect("Failed to parse buildfile");
+    let targets = parse_buildfile().expect("Failed to parse buildfile");
 
     match args[1].as_str() {
         "build" => {

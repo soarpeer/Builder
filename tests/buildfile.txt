@@ -1,0 +1,7 @@
+# buildfile.txt
+
+build: src/main.rs
+    rustc src/main.rs -o target/test_project
+
+clean:
+    del /f /q target\test_project.exe

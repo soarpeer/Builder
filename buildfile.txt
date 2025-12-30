@@ -1,14 +1,9 @@
 # buildfile.txt
 
-# The target 'build' depends on 'src/main.rs' and 'src/other.rs'.
-build: src/main.rs src/other.rs
-    rustc src/main.rs src/other.rs -o output/my_program
+# Define the build target
+build: tests/src/main.rs
+	rustc tests/src/main.rs -o tests/target/test_project.exe
 
-# Clean up generated files
+# Clean command to remove the output file
 clean:
-    rm -f output/my_program
-    rm -f src/*.o
-
-# Another custom target (e.g., run the program)
-run: output/my_program
-    ./output/my_program
+	del /f /q tests\target\test_project.exe
