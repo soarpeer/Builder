@@ -7,7 +7,7 @@ pub fn build_target(target_name: &str, targets: &HashMap<String, Target>) {
     if let Some(target) = targets.get(target_name) {
         // Build dependencies first
         for dep in &target.dependencies {
-            build_target(dep, targets); // Recursively build dependencies
+            build_target(dep, targets); 
         }
 
         if needs_rebuild(target_name, &target.dependencies) {
@@ -15,7 +15,7 @@ pub fn build_target(target_name: &str, targets: &HashMap<String, Target>) {
             let command = &target.command;
 
             // Debugging output to verify the command before running it
-            println!("Running command: {}", command);
+            // println!("Running command: {}", command);
 
             let status = if cfg!(windows) {
                 // Use `cmd.exe` on Windows
