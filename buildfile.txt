@@ -1,0 +1,14 @@
+# buildfile.txt
+
+# The target 'build' depends on 'src/main.rs' and 'src/other.rs'.
+build: src/main.rs src/other.rs
+    rustc src/main.rs src/other.rs -o output/my_program
+
+# Clean up generated files
+clean:
+    rm -f output/my_program
+    rm -f src/*.o
+
+# Another custom target (e.g., run the program)
+run: output/my_program
+    ./output/my_program
